@@ -29,4 +29,4 @@
 - `2354100-郝哲逸-CTF实验5.pdf`
 - `2354100_郝哲逸.pptx`
 
-[返回大三下学期](../README.md) | [返回总目录](../../README.md)
+[返回大三下学期](https://github.com/SOLDIER-627/TJSE-NetTrack-Assignments/tree/main/Third_year_second_semester) | [返回总目录](https://github.com/SOLDIER-627/TJSE-NetTrack-Assignments)
