@@ -1,0 +1,41 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "G:\\Third_year_second_semester\\InformationSecurity\\hw3\\moutai-trace\\contracts\\MoutaiTrace.sol": {
+      "lastModificationDate": 1777801753681,
+      "contentHash": "b1064083f164f53925cd94c25387795f",
+      "sourceName": "contracts/MoutaiTrace.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "MoutaiTrace"
+      ]
+    }
+  }
+}

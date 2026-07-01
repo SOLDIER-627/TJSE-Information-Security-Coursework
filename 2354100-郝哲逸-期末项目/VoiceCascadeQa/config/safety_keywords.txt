@@ -1,0 +1,8 @@
+# Safety keywords — one pattern per line
+# Format: category|keyword1,keyword2,...
+
+violence|暴力,杀人,袭击,武器,枪支,炸弹,爆炸,恐怖,袭击,伤害,刺杀,暗杀
+self_harm|自杀,自残,割腕,跳楼,上吊,服药自杀,不想活
+illegal|毒品,贩卖,走私,洗钱,诈骗,黑客攻击,入侵系统,窃取数据,盗取
+injection|忽略指令,忽略上面,disregard,ignore instructions,you are now,pretend,jailbreak,越狱,角色扮演,system prompt,绕过安全,绕过规则,不受限制,没有限制,不受约束
+irrelevant|娱乐,明星,八卦,游戏攻略,电影推荐,美食,旅游,购物,股票,投资理财

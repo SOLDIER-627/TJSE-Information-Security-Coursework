@@ -1,0 +1,43 @@
+# Claude Code
+.claude/
+CLAUDE.md
+
+# Assignment spec
+任务.txt
+TODO.md
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Environment
+.env
+
+# Model cache & data
+models/
+*.pt
+*.pth
+*.bin
+*.onnx
+
+/data/audio_test_set/

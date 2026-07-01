@@ -1,0 +1,86 @@
+# 级联式语音问答系统配置
+
+# Device: cuda / cpu
+device: "cpu"
+
+# ASR settings
+asr:
+  # Baseline: SenseVoiceSmall
+  baseline_model: "iic/SenseVoiceSmall"
+  vad_model: "fsmn-vad"
+  # Improved: streaming ASR
+  streaming_model: "paraformer-zh-streaming"
+  # Improved: hotword refinement
+  hotword_model: "paraformer-zh"
+  hotword_file: "config/hotwords_shipbuilding.txt"
+  language: "auto"
+
+# LLM settings (OpenAI-compatible API)
+# Sensitive values are read from .env file; defaults below are placeholders
+llm:
+  api_base: ""    # from LLM_API_BASE
+  api_key: ""     # from LLM_API_KEY
+  model: ""       # from LLM_MODEL
+  max_tokens: 1024
+  temperature: 0.7
+  system_prompt: |
+    你是一位资深的造船领域专业问答助手，拥有丰富的船舶设计与船舶工程知识。
+    请遵循以下规则回答用户问题：
+
+    1. 使用简洁、准确、专业的中文回答，避免冗长和模糊表述。
+    2. 回答应紧扣造船领域，涵盖但不限于：船体结构（龙骨、肋骨、纵骨、甲板、舱壁、
+       舷侧、艏楼、艉轴等）、船舶性能（稳性、浮力、阻力、推进）、船舶系统（动力、
+       轮机、压载、消防、救生）、建造工艺（焊接、涂装、舾装、下水、试航）、
+       总布置设计等方向。
+    3. 涉及专业术语时，先给出通俗解释，再补充技术细节。
+    4. 如果用户的问题明显超出造船领域，请礼貌说明本助手专注于造船领域，并建议
+       用户咨询相关领域的专业渠道。
+    5. 如果问题涉及造船领域但你不确信答案，请诚实说明并给出你所了解的部分信息，
+       不要编造事实。
+    6. 用户输入来自语音识别，可能存在同音误识别（如"手楼"实为"艏楼"、"剁干"实为
+       "舵杆"、"仓壁"实为"舱壁"）。遇到不确定的术语时，请结合造船领域语境推断
+       其正确含义后再作答，不要直接否定或忽略。
+    7. 回答使用纯文本，不要使用Markdown格式（不要用**粗体**、*斜体*、# 标题、
+       - 列表等标记），因为回答会直接转为语音播报。
+  streaming: false  # true for improved mode
+
+# TTS settings
+tts:
+  engine: "kokoro"  # kokoro | cosyvoice | edge-tts
+  sample_rate: 24000
+  # Kokoro-82M (primary, local CPU/GPU, streaming supported)
+  kokoro:
+    voice: "zf_xiaobei"
+    speed: 1
+    device: "cpu"
+  # CosyVoice-300M (alternative, requires model_dir)
+  model_dir: ""
+  speaker_id: "中文女"
+  # edge-tts (fallback, requires network)
+  fallback: "edge-tts"
+  edge_voice: "zh-CN-XiaoxiaoNeural"
+
+# Safety gate
+safety:
+  enabled: true
+  keywords_file: "config/safety_keywords.txt"
+
+# Transition phrases (衔接语)
+transition:
+  phrases:
+    - "让我为您查找相关信息"
+    - "正在为您解答"
+    - "请稍等，我来查找"
+  crossfade_ms: 50
+
+# Audio settings
+audio:
+  sample_rate: 16000
+  channels: 1
+  vad_silence_ms: 800
+  vad_threshold: 0.5
+
+# Evaluation
+evaluation:
+  runs_per_audio: 3
+  output_dir: "data/results"

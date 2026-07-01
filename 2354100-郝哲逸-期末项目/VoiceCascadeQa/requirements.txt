@@ -1,0 +1,29 @@
+# Core
+pyyaml>=6.0
+numpy>=1.24
+sounddevice>=0.4.6
+soundfile>=0.12.1
+
+# ASR - FunASR ecosystem
+funasr>=1.0.0
+modelscope>=1.9.0
+
+# LLM - OpenAI compatible API
+openai>=1.0.0
+
+# TTS - CosyVoice (install from source)
+# Install separately: pip install git+https://github.com/FunAudioLLM/CosyVoice.git
+# If CosyVoice fails on Windows, fallback: edge-tts
+edge-tts>=6.1.0
+
+# Async & streaming
+aiohttp>=3.9.0
+asyncio-mqtt>=0.16.0
+
+# Evaluation
+pandas>=2.0.0
+matplotlib>=3.7.0
+
+# Dev
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
